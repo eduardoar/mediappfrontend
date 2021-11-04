@@ -1,3 +1,4 @@
+import { ConsultaComponent } from './pages/consulta/consulta.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PacienteComponent } from './pages/paciente/paciente.component';
@@ -22,6 +23,8 @@ const routes: Routes = [
     {path: 'nuevo', component: EspecialidadEdicionComponent},
     {path: 'edicion/:id', component: EspecialidadEdicionComponent}
   ]},
+  {path: 'consulta', component: ConsultaComponent}
+
 ];
 
 @NgModule({
