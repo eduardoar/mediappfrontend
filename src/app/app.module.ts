@@ -17,6 +17,7 @@ import { ExamenComponent } from './pages/examen/examen.component';
 import { ExamenEdicionComponent } from './pages/examen/examen-edicion/examen-edicion.component';
 import { ConsultaComponent } from './pages/consulta/consulta.component';
 import { ConsultaEspecialComponent } from './pages/consulta-especial/consulta-especial.component';
+import { ConsultaWizardComponent } from './pages/consulta-wizard/consulta-wizard.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ConsultaEspecialComponent } from './pages/consulta-especial/consulta-es
     ExamenComponent,
     ExamenEdicionComponent,
     ConsultaComponent,
-    ConsultaEspecialComponent
+    ConsultaEspecialComponent,
+    ConsultaWizardComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { EspecialidadComponent } from './pages/especialidad/especialidad.compone
 import { ExamenEdicionComponent } from './pages/examen/examen-edicion/examen-edicion.component';
 import { EspecialidadEdicionComponent } from './pages/especialidad/especialidad-edicion/especialidad-edicion.component';
 import { ConsultaEspecialComponent } from './pages/consulta-especial/consulta-especial.component';
+import { ConsultaWizardComponent } from './pages/consulta-wizard/consulta-wizard.component';
 
 const routes: Routes = [
   {path: 'paciente', component: PacienteComponent, children: [
@@ -25,7 +26,8 @@ const routes: Routes = [
     {path: 'edicion/:id', component: EspecialidadEdicionComponent}
   ]},
   {path: 'consulta', component: ConsultaComponent},
-  {path: 'consulta-especial', component: ConsultaEspecialComponent}
+  {path: 'consulta-especial', component: ConsultaEspecialComponent},
+  {path: 'consulta-wizard', component: ConsultaWizardComponent}
 
 ];
 
