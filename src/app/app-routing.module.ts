@@ -1,3 +1,4 @@
+import { BuscarComponent } from './pages/buscar/buscar.component';
 import { ConsultaComponent } from './pages/consulta/consulta.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,6 +11,7 @@ import { ExamenEdicionComponent } from './pages/examen/examen-edicion/examen-edi
 import { EspecialidadEdicionComponent } from './pages/especialidad/especialidad-edicion/especialidad-edicion.component';
 import { ConsultaEspecialComponent } from './pages/consulta-especial/consulta-especial.component';
 import { ConsultaWizardComponent } from './pages/consulta-wizard/consulta-wizard.component';
+import { BuscarDialogoComponent } from './pages/buscar/buscar-dialogo/buscar-dialogo.component';
 
 const routes: Routes = [
   {path: 'paciente', component: PacienteComponent, children: [
@@ -27,7 +29,10 @@ const routes: Routes = [
   ]},
   {path: 'consulta', component: ConsultaComponent},
   {path: 'consulta-especial', component: ConsultaEspecialComponent},
-  {path: 'consulta-wizard', component: ConsultaWizardComponent}
+  {path: 'consulta-wizard', component: ConsultaWizardComponent},
+  {path: 'buscar', component: BuscarComponent, children: [
+    {path: 'dialog', component: BuscarDialogoComponent},
+  ]}
 
 ];
 

@@ -18,6 +18,8 @@ import { ExamenEdicionComponent } from './pages/examen/examen-edicion/examen-edi
 import { ConsultaComponent } from './pages/consulta/consulta.component';
 import { ConsultaEspecialComponent } from './pages/consulta-especial/consulta-especial.component';
 import { ConsultaWizardComponent } from './pages/consulta-wizard/consulta-wizard.component';
+import { BuscarComponent } from './pages/buscar/buscar.component';
+import { BuscarDialogoComponent } from './pages/buscar/buscar-dialogo/buscar-dialogo.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ConsultaWizardComponent } from './pages/consulta-wizard/consulta-wizard
     ExamenEdicionComponent,
     ConsultaComponent,
     ConsultaEspecialComponent,
-    ConsultaWizardComponent
+    ConsultaWizardComponent,
+    BuscarComponent,
+    BuscarDialogoComponent
   ],
   imports: [
     BrowserModule,
