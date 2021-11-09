@@ -20,6 +20,8 @@ import { ConsultaEspecialComponent } from './pages/consulta-especial/consulta-es
 import { ConsultaWizardComponent } from './pages/consulta-wizard/consulta-wizard.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { BuscarDialogoComponent } from './pages/buscar/buscar-dialogo/buscar-dialogo.component';
+import { ReporteComponent } from './pages/reporte/reporte.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { BuscarDialogoComponent } from './pages/buscar/buscar-dialogo/buscar-dia
     ConsultaEspecialComponent,
     ConsultaWizardComponent,
     BuscarComponent,
-    BuscarDialogoComponent
+    BuscarDialogoComponent,
+    ReporteComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { BuscarDialogoComponent } from './pages/buscar/buscar-dialogo/buscar-dia
     HttpClientModule,  
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule  
+    FormsModule,
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

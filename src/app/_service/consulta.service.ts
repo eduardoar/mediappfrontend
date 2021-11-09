@@ -1,3 +1,4 @@
+import { ConsultaResumenDTO } from './../_model/consultaResumenDTO';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
@@ -33,5 +34,29 @@ export class ConsultaService {
     return this.http.get<ConsultaListaExamenDTO[]>(`${environment.HOST}/consultaexamenes/${idConsulta}`);
   }
 
+  listarResumen() {
+    return this.http.get<ConsultaResumenDTO[]>(`${this.url}/listarResumen`);
+  }
+
+  generarReporte() {
+    return this.http.get(`${this.url}/generarReporte`, {
+      responseType: 'blob'
+    });
+  }
+
+  guardarArchivo(data: File) { //medico: Medico
+    let formdata: FormData = new FormData;
+    formdata.append('adjunto', data);
+    //let medicoBlob = new Blob([JSON.stringify(medico)], { type: "application/json" }); 
+    //formdata.append('medico', medicoBlob);
+
+    return this.http.post(`${this.url}/guardarArchivo`, formdata);
+  }
+
+  leerArchivo() {
+    return this.http.get(`${this.url}/leerArchivo/1`, {
+      responseType: 'blob'
+    });
+  }
 
 }

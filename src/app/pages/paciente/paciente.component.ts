@@ -17,7 +17,7 @@ export class PacienteComponent implements OnInit {
 
   dataSource: MatTableDataSource<Paciente> = new MatTableDataSource();
   displayedColumns: string[] = ['idPaciente', 'nombres', 'apellidos', 'acciones'];
-
+  cantidad: number = 0;
   @ViewChild(MatSort) sort: MatSort = new MatSort();
   @ViewChild(MatPaginator) paginator?: MatPaginator;
 
@@ -36,9 +36,14 @@ export class PacienteComponent implements OnInit {
       this.crearTabla(data);
     });
 
-    this.pacienteService.listar().subscribe(data => {
+    /*this.pacienteService.listar().subscribe(data => {
       this.crearTabla(data);
-    });    
+    }); */
+
+    this.pacienteService.listarPageable(0, 10).subscribe(data => {
+      this.cantidad = data.totalElements;
+      this.dataSource = new MatTableDataSource(data.content);
+    })
   }
 
   eliminar(idPaciente: number) {
@@ -59,6 +64,13 @@ export class PacienteComponent implements OnInit {
 
   filtrar(e: any) {
     this.dataSource.filter = e.target.value.trim().toLowerCase();
+  }
+
+  mostrartMas(e: any) {
+    this.pacienteService.listarPageable(e.pageIndex, e.pageSize).subscribe(data => {
+      this.cantidad = data.totalElements;
+      this.dataSource = new MatTableDataSource(data.content);
+    });
   }
 
 }

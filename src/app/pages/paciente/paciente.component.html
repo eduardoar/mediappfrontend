@@ -41,7 +41,7 @@
 
 </table>
 
-<mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" ></mat-paginator>
+<mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" [length]="cantidad" (page)="mostrartMas($event)"></mat-paginator>
 
 <button mat-fab color="accent" style="float: right" routerLink="/paciente/nuevo" >
     <mat-icon>add</mat-icon>
